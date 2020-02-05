@@ -4,8 +4,8 @@ window.onload = function() { // fires when the window loads
     var http = new XMLHttpRequest(); // this object allows us to get data from the server
     
     http.onreadystatechange = function(){
-        if(http.readyState== 4) { // check if the state is available
-
+        if(http.readyState == 4 && http.status == 200) { // check if the state is available
+            console.log(http.response);
         }
     };
 
