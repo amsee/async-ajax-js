@@ -4,8 +4,8 @@ window.onload = function() { // fires when the window loads
     var http = new XMLHttpRequest(); // this object allows us to get data from the server
     
     http.onreadystatechange = function(){
-        if(http.readyState == 4 && http.status == 200) { // check if the state is available
-            console.log(http.response);
+        if (http.readyState == 4 && http.status == 200) { // check if the state is available
+            //console.log(JSON.parse(http.response));
         }
     };
 
@@ -14,9 +14,12 @@ window.onload = function() { // fires when the window loads
     // sends the request to the server
     http.send();
 
-}
 // jQuery method
-
+    s.get("tweets.json", function(data){ // asynchronous behaviour
+        console.log(data);
+    });
+    console.log("test");
+};
 
 /* READY SATES
 
