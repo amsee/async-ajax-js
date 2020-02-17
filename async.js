@@ -5,12 +5,13 @@ window.onload = function() { // fires when the window loads
     
     http.onreadystatechange = function(){
         if (http.readyState == 4 && http.status == 200) { // check if the state is available
-            //console.log(JSON.parse(http.response));
+            console.log(JSON.parse(http.response));
         }
     };
 
     // open method - sets up the request (GET/POST), url, asychronous/syncronous
-    http.open("GET", "tweets.json", true); // true -> asynchronous
+    // requesting source from API
+    http.open("GET", "https://ghibliapi.herokuapp.com/films", true); // true -> asynchronous
     // sends the request to the server
     http.send();
 
